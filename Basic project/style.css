@@ -1,0 +1,43 @@
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 50%;
+  height: 60vh;
+  background-color: #ffc8dd;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+.container h1 {
+  font-size: 44px;
+  color: #d62828;
+}
+
+.container .inpt input {
+  padding: 1rem 2.5rem;
+  text-align: center;
+  font-size: 30px;
+  color: #bc4749;
+}
+.container .btn button {
+  padding: 1rem 2rem;
+  font-size: 20px;
+  font-weight: bold;
+  color: #bc4749;
+}
+.container p {
+  font-size: 25px;
+  color: #bc4749;
+  font-weight: bold;
+}

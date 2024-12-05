@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the Number Game</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        box-sizing: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        width: 50%;
+        height: 60vh;
+        background-color: #30c3b7;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 2rem;
+      }
+      .container h1 {
+        font-size: 44px;
+        color: #ffffff;
+      }
+
+      .container .inpt input {
+        padding: 1rem 5.5rem;
+        text-align: center;
+        font-size: 30px;
+        color: #34c7ac;
+        margin-bottom: 2rem;
+      }
+      .container .btn button {
+        padding: 1rem 2rem;
+        font-size: 20px;
+        font-weight: bold;
+        color: #ffffff;
+        background-color: #4e9487;
+      }
+      .container p {
+        font-size: 25px;
+        color: #f8f8f8;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Guess a Number between 1 to 10!</h1>
+      <div class="inpt">
+        <input
+          type="number"
+          id="guessInput"
+          placeholder=" guess"
+          min="1"
+          max="10"
+        />
+      </div>
+      <div class="btn">
+        <button onclick="checkGuess()">Check</button>
+      </div>
+      <p id="result"></p>
+    </div>
+
+    <script>
+      const loveScore = 7;
+
+      function checkGuess() {
+        const guess = parseInt(document.getElementById('guessInput').value);
+
+        if (isNaN(guess)) {
+          document.getElementById('result').innerText =
+            'Please enter a valid number.';
+          return;
+        }
+
+        if (guess === loveScore) {
+          document.getElementById(
+            'result'
+          ).innerHTML = `${loveScore} - You got it! 🎉`;
+        } else if (guess < loveScore) {
+          document.getElementById('result').innerHTML = 'Too low! Try again.';
+        } else {
+          document.getElementById('result').innerHTML = 'Too high! Try again.';
+        }
+      }
+    </script>
+  </body>
+</html>

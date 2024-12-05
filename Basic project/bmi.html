@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        width: 50%;
+        height: 60%;
+        background-color: aqua;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem;
+      }
+      .container h1 {
+        color: red;
+      }
+      .container label {
+        font-size: 25px;
+      }
+      .container input {
+        padding: 0.8rem 2rem;
+        font-size: 25px;
+      }
+      .container button {
+        padding: 1rem 1.5rem;
+        font-size: 20px;
+        font-weight: bold;
+      }
+      .container p {
+        font-size: 25px;
+        color: #003;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>BMI Calculator</h1>
+      <label for="weight">weight (Kg)</label>
+      <input type="number" id="weight" placeholder="Enter your weight in kg" />
+      <br /><br />
+      <label for="height">height (M)</label>
+
+      <input
+        type="number"
+        step="0.01"
+        id="height"
+        placeholder="Enter your height in m"
+      />
+      <br />
+      <br />
+      
+      <button onclick="calculateBmi()">Caculate the BMI</button>
+      <p id="result"></p>
+    </div>
+
+    <script>
+      function calculateBmi() {
+        let weight = document.getElementById('weight').value;
+        let height = document.getElementById('height').value;
+
+        if (weight > 0 && height > 0) {
+          let bmi = weight / (height * height);
+          bmi = bmi.toFixed(1);
+
+          let message;
+          if (bmi < 18.5) {
+            message = 'Your BMI is ' + bmi + ', so you are underweight.';
+          } else if (bmi >= 18.5 && bmi <= 24.9) {
+            message = 'Your BMI is ' + bmi + ', so you are normal.';
+          } else {
+            message = 'Your BMI is ' + bmi + ', so you are overweight.';
+          }
+
+          document.getElementById('result').innerHTML = message;
+        } else {
+          document.getElementById('result').innerHTML =
+            'please enter valide weight and height';
+        }
+      }
+    </script>
+  </body>
+</html>

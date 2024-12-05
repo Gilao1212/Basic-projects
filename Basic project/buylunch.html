@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      .container {
+        width: 50%;
+        height: 60vh;
+        background-color: #264653;
+      }
+      .container button {
+        padding: 1.5rem 2.5rem;
+        border: none;
+        font-size: 25px;
+        font-weight: bold;
+      }
+      .container p {
+        color: yellowgreen;
+      }
+      .container span {
+        margin-left: 8.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Who ganna buy Ice cream <br /><span>🍦🍦🍧🍧</span></h1>
+      <button onclick="person()">Who ganna buy</button>
+      <p id="result"></p>
+    </div>
+    <script>
+      function person() {
+        let friends = ['jilao', 'MAryan'];
+
+        let randum = Math.floor(Math.random() * friends.length);
+
+        let personBuylunch = friends[randum];
+
+        document.getElementById('result').innerHTML =
+          personBuylunch + ' is going to buy Ice Cream.';
+      }
+    </script>
+  </body>
+</html>
